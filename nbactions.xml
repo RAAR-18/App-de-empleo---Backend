@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+    <action>
+        <actionName>CUSTOM-Ejecutar Back 3.5.3</actionName>
+        <displayName>Ejecutar Back 3.5.3</displayName>
+        <goals>
+            <goal>org.springframework.boot:spring-boot-maven-plugin:3.5.3:run</goal>
+        </goals>
+    </action>
+</actions>
