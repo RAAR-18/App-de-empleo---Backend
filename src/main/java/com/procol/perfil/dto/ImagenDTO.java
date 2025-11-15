@@ -10,7 +10,6 @@ public class ImagenDTO {
     private String tamanioImagen;
     private Short favoritaImagen;
     private Short categoria;
-    private String urlImagen;
 
     public ImagenDTO() {
     }
@@ -18,7 +17,7 @@ public class ImagenDTO {
     public ImagenDTO(
             Integer idImagen, UsuarioDTO idUsuario, String nombrePublicoImagen,
             String nombrePrivadoImagen, String tipoImagen, String tamanioImagen,
-            Short favoritaImagen, Short categoria, String urlImagen
+            Short favoritaImagen, Short categoria
     ) {
         this.idImagen = idImagen;
         this.idUsuario = idUsuario;
@@ -28,7 +27,6 @@ public class ImagenDTO {
         this.tamanioImagen = tamanioImagen;
         this.favoritaImagen = favoritaImagen;
         this.categoria = categoria;
-        this.urlImagen = urlImagen;
     }
 
     public Integer getIdImagen() {
@@ -93,13 +91,5 @@ public class ImagenDTO {
 
     public void setCategoria(Short categoria) {
         this.categoria = categoria;
-    }
-
-    public String getUrlImagen() {
-        return urlImagen;
-    }
-
-    public void setUrlImagen(String urlImagen) {
-        this.urlImagen = urlImagen;
     }
 }
