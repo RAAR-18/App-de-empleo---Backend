@@ -10,14 +10,10 @@ import java.util.List;
 public class PalabraClaveDTOAsignar {
 
     private Integer idUsuario;
+    private String idsPalabraClaveTexto;
     private List<Integer> idsPalabrasClave;
 
     public PalabraClaveDTOAsignar() {}
-
-    public PalabraClaveDTOAsignar(Integer idUsuario, List<Integer> idsPalabrasClave) {
-        this.idUsuario = idUsuario;
-        this.idsPalabrasClave = idsPalabrasClave;
-    }
 
     public Integer getIdUsuario() {
         return idUsuario;
@@ -27,19 +23,28 @@ public class PalabraClaveDTOAsignar {
         this.idUsuario = idUsuario;
     }
 
+    public String getIdsPalabraClaveTexto() {
+        return idsPalabraClaveTexto;
+    }
+
+    public void setIdsPalabraClaveTexto(String idsPalabraClaveTexto) {
+        this.idsPalabraClaveTexto = idsPalabraClaveTexto;
+        this.idsPalabrasClave = parsearIds(idsPalabraClaveTexto);
+    }
+
     public List<Integer> getIdsPalabrasClave() {
         return idsPalabrasClave;
     }
 
-    public void setIdsPalabrasClave(List<Integer> idsPalabrasClave) {
-        this.idsPalabrasClave = idsPalabrasClave;
-    }
-
-    @Override
-    public String toString() {
-        return "PalabraClaveAsignarDTO{"
-                + "idUsuario=" + idUsuario
-                + ", idsPalabrasClave=" + idsPalabrasClave
-                + '}';
+    private List<Integer> parsearIds(String raw) {
+        if (raw == null || raw.isBlank()) {
+            return Collections.emptyList();
+        }
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            return mapper.readValue(raw, new TypeReference<List<Integer>>() {});
+        } catch (JsonProcessingException e) {
+            throw new IllegalArgumentException("Formato inválido para idsPalabrasClaveTexto: " + raw, e);
+        }
     }
 }
