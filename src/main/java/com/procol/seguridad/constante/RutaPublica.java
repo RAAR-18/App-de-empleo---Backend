@@ -12,7 +12,8 @@ public class RutaPublica {
         "/",
         "/*.jpg",
         "/*.jpeg",
-        "/*.png"
+        "/*.png",
+            "/imagenes/**"
     };
 
     private RutaPublica() {
