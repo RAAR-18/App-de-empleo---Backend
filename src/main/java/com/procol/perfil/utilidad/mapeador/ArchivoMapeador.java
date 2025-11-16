@@ -27,6 +27,7 @@ public class ArchivoMapeador implements MapeoEntidadDTO<Archivo, ArchivoDTO> {
                 objArchivo.getNombrePrivadoArchivo(),
                 objArchivo.getTipoArchivo(),
                 objArchivo.getTamanioArchivo(),
+                objArchivo.getGrupoArchivo(),
                 objArchivo.getFechaSubida()
         );
 
@@ -45,6 +46,7 @@ public class ArchivoMapeador implements MapeoEntidadDTO<Archivo, ArchivoDTO> {
         entidad.setNombrePrivadoArchivo(dto.getNombrePrivadoArchivo());
         entidad.setTipoArchivo(dto.getTipoArchivo());
         entidad.setTamanioArchivo(dto.getTamanioArchivo());
+        entidad.setGrupoArchivo(dto.getGrupoArchivo());
         entidad.setFechaSubida(dto.getFechaSubida());
 
         return entidad;

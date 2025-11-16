@@ -48,6 +48,11 @@ public class Archivo implements Serializable {
     private String tamanioArchivo;
 
     @Basic(optional = false)
+    @NotNull
+    @Column(name = "grupo_archivo", nullable = false)
+    private Integer grupoArchivo;
+
+    @Basic(optional = false)
     @Column(name = "fecha_subida", nullable = false, updatable = false)
     private LocalDateTime fechaSubida;
 
@@ -121,6 +126,14 @@ public class Archivo implements Serializable {
         this.tamanioArchivo = tamanioArchivo;
     }
 
+    public Integer getGrupoArchivo() {
+        return grupoArchivo;
+    }
+
+    public void setGrupoArchivo(Integer grupoArchivo) {
+        this.grupoArchivo = grupoArchivo;
+    }
+
     public LocalDateTime getFechaSubida() {
         return fechaSubida;
     }
@@ -157,6 +170,7 @@ public class Archivo implements Serializable {
                 ", nombrePrivadoArchivo='" + nombrePrivadoArchivo + '\'' +
                 ", tipoArchivo='" + tipoArchivo + '\'' +
                 ", tamanioArchivo='" + tamanioArchivo + '\'' +
+                ", grupoArchivo=" + grupoArchivo +
                 ", fechaSubida=" + fechaSubida +
                 '}';
     }

@@ -10,23 +10,26 @@ public class ArchivoDTO {
     private String nombrePrivadoArchivo;
     private String tipoArchivo;
     private String tamanioArchivo;
-    private LocalDateTime  fechaSubida;
+    private Integer grupoArchivo;
+    private LocalDateTime fechaSubida;
 
     public ArchivoDTO() {}
 
     public ArchivoDTO(Integer idArchivo, UsuarioDTO idUsuario,
                       String nombrePublicoArchivo, String nombrePrivadoArchivo,
                       String tipoArchivo, String tamanioArchivo,
-                      LocalDateTime fechaSubida) {
+                      Integer grupoArchivo, LocalDateTime fechaSubida) {
         this.idArchivo = idArchivo;
         this.idUsuario = idUsuario;
         this.nombrePublicoArchivo = nombrePublicoArchivo;
         this.nombrePrivadoArchivo = nombrePrivadoArchivo;
         this.tipoArchivo = tipoArchivo;
         this.tamanioArchivo = tamanioArchivo;
+        this.grupoArchivo = grupoArchivo;
         this.fechaSubida = fechaSubida;
     }
 
+    // Getters y Setters
     public Integer getIdArchivo() {
         return idArchivo;
     }
@@ -73,6 +76,14 @@ public class ArchivoDTO {
 
     public void setTamanioArchivo(String tamanioArchivo) {
         this.tamanioArchivo = tamanioArchivo;
+    }
+
+    public Integer getGrupoArchivo() {
+        return grupoArchivo;
+    }
+
+    public void setGrupoArchivo(Integer grupoArchivo) {
+        this.grupoArchivo = grupoArchivo;
     }
 
     public LocalDateTime getFechaSubida() {

@@ -10,12 +10,13 @@ public class ArchivoDTOCrear {
     private String nombrePrivadoArchivo;
     private String tipoArchivo;
     private String tamanioArchivo;
+    private Integer grupoArchivo;
     private MultipartFile archivo;
 
     public ArchivoDTOCrear() {}
 
     public ArchivoDTOCrear(Integer idArchivo, Integer idUsuario, String nombrePublicoArchivo,
-                           String nombrePrivadoArchivo, String tipoArchivo, String tamanioArchivo,
+                           String nombrePrivadoArchivo, String tipoArchivo, String tamanioArchivo, Integer  grupoArchivo,
                            MultipartFile archivo
     ) {
         this.idArchivo = idArchivo;
@@ -24,6 +25,7 @@ public class ArchivoDTOCrear {
         this.nombrePrivadoArchivo = nombrePrivadoArchivo;
         this.tipoArchivo = tipoArchivo;
         this.tamanioArchivo = tamanioArchivo;
+        this.grupoArchivo = grupoArchivo;
         this.archivo = archivo;
     }
 
@@ -59,6 +61,14 @@ public class ArchivoDTOCrear {
     public String getTamanioArchivo() { return tamanioArchivo; }
 
     public void setTamanioArchivo(String tamanioArchivo) {  this.tamanioArchivo = tamanioArchivo; }
+
+    public Integer getGrupoArchivo() {
+        return grupoArchivo;
+    }
+
+    public void setGrupoArchivo(Integer grupoArchivo) {
+        this.grupoArchivo = grupoArchivo;
+    }
 
     public MultipartFile getArchivo() { return archivo; }
 

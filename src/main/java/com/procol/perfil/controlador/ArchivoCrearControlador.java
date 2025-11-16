@@ -1,5 +1,6 @@
 package com.procol.perfil.controlador;
 
+import com.procol.infraestructura.constante.ConstGrupoArchivo;
 import com.procol.infraestructura.dto.ArchivoDtoMetadato;
 import com.procol.infraestructura.utilidad.respuesta.RespuestaHttp;
 import com.procol.infraestructura.utilidad.validacion.ArchivoRegla;
@@ -51,6 +52,7 @@ public class ArchivoCrearControlador {
         dto.setNombrePrivadoArchivo(idUsuario + "_" + metadato.getNombrePrivado());
         dto.setTipoArchivo(metadato.getTipoMime());
         dto.setTamanioArchivo(metadato.getTamanio());
+        dto.setGrupoArchivo(ConstGrupoArchivo.HOJA_VIDA);
 
 
         ArchivoDTO respuesta = archivoCrearServicio.agregarArchivo(dto);
