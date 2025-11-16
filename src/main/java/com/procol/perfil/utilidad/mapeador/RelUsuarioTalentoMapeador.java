@@ -14,7 +14,6 @@ public class RelUsuarioTalentoMapeador implements MapeoEntidadDTO<RelUsuarioTale
                 entidad.getUsuario().getIdUsuario(),
                 entidad.getTalento().getIdTalento(),
                 entidad.getTalento().getNombre(),
-                entidad.getTalento().getTipo(),
                 entidad.getNivelDominio()
         );
     }

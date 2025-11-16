@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 @Table(name = "talentos")
 @Entity(name = "perfil-Talento")
@@ -20,21 +18,14 @@ public class Talento implements Serializable {
 
     @Size(max = 100)
     @NotBlank
-    @Column(name = "nombre", nullable = false, length = 100)
+    @Column(name = "nombre", nullable = false, length = 100, unique = true)
     private String nombre;
-
-    @NotNull
-    @Min(1)
-    @Max(2)
-    @Column(name = "tipo", nullable = false)
-    private Short tipo; // habilidad = 1, competencia = 2
 
     public Talento() {}
 
-    public Talento(Integer idTalento, String nombre, Short tipo) {
+    public Talento(Integer idTalento, String nombre) {
         this.idTalento = idTalento;
         this.nombre = nombre;
-        this.tipo = tipo;
     }
 
     public String getNombre() {
@@ -43,14 +34,6 @@ public class Talento implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public Short getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(Short tipo) {
-        this.tipo = tipo;
     }
 
     public Integer getIdTalento() {
@@ -78,6 +61,6 @@ public class Talento implements Serializable {
 
     @Override
     public String toString() {
-        return "Talento[ idTalento=" + idTalento + " nombre " + nombre + " tipo " +  tipo + " ]";
+        return "Talento[ idTalento=" + idTalento + " nombre=" + nombre + " ]";
     }
 }
