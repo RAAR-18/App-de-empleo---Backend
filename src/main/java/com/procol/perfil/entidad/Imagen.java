@@ -63,11 +63,6 @@ public class Imagen implements Serializable {
     @Column(name = "favorita_imagen", nullable = false)
     private short favoritaImagen;
 
-    /**
-     * Categoría de la imagen
-     * 1 = PERFIL: Foto de perfil del usuario (solo una favorita)
-     * 2 = PORTAFOLIO: Imágenes del portafolio (max 5)
-     */
     @Basic(optional = false)
     @NotNull
     @Min(1)
