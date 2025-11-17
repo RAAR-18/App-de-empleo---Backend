@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController("perfil_ImagenConsultarControlador")
 @CrossOrigin(origins = "*")
 @RequestMapping("/perfil/imagen")
@@ -28,7 +30,7 @@ public class ImagenConsultarControlador {
         if (imagen != null) {
             String urlImagen = urlBase + "/imagenes/" + imagen.getNombrePrivadoImagen();
             return RespuestaHttp.ok("Foto de perfil obtenida",
-                    java.util.Map.of("urlImagen", urlImagen)
+                    Map.of("urlImagen", urlImagen)
             );
         }
 
